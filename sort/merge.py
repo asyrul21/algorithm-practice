@@ -2,22 +2,6 @@ from util import isSorted, testArray
 import time
 
 ###########
-
-def partition(arr, start, end):
-    pivot = arr[end]
-    indexOfValueLessThanPivot = start - 1
-
-    for j in range(start, end):
-        if(arr[j] < pivot):
-            indexOfValueLessThanPivot+= 1
-            # swap
-            arr[j], arr[indexOfValueLessThanPivot] = arr[indexOfValueLessThanPivot], arr[j]
-    
-    # swap last item, since we started i at -1
-    arr[indexOfValueLessThanPivot + 1], arr[end] = arr[end], arr[indexOfValueLessThanPivot + 1]
-    return indexOfValueLessThanPivot + 1
-
-
 def mergeSort(arr):
     
     # only do if there are more than 1 elements
